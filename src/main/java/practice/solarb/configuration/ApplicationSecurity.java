@@ -11,10 +11,10 @@ import org.springframework.security.core.session.SessionRegistryImpl;
 import practice.solarb.authentication.AuthenticationProviderExtend;
 
 @Configuration
-@EnableWebSecurity
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+@EnableWebSecurity(debug = true)
+public class ApplicationSecurity extends WebSecurityConfigurerAdapter {
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) {
         auth.authenticationProvider(new AuthenticationProviderExtend());
     }
 
